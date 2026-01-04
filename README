@@ -1,0 +1,25 @@
+# 🚀 Benchmark: Python Síncrono vs Assíncrono em ETL
+
+Este projeto visa demonstrar o impacto da arquitetura de software na performance de ingestão de dados (Data Ingestion), comparando paradigmas de I/O bloqueante e não-bloqueante.
+
+## 📊 Resultados do Benchmark
+
+| Modelo | Tecnologia | Volume de Dados | Tempo de Execução |
+| :--- | :--- | :--- | :--- |
+| **Síncrono** | `requests` | 50 registros | ~50.0s |
+| **Assíncrono** | `aiohttp` + `asyncio` | 200 registros | **~1.3s** |
+
+> **Conclusão:** A abordagem assíncrona resultou em um aumento exponencial de vazão (throughput), sendo ~40x mais rápida proporcionalmente.
+
+## 🛠️ Tecnologias Utilizadas
+- **Python 3.10+**
+- **Aiohttp / Aiofiles:** Para requisições concorrentes e I/O não-bloqueante.
+- **Pandas:** Para estruturação e exportação dos dados (Excel/SQL).
+- **SQLite:** Persistência dos metadados.
+
+## 📂 Estrutura do Projeto
+- `/RoboHash_Sincrono`: Implementação linear tradicional.
+- `/RoboHash_Assincono`: Implementação otimizada com Event Loop.
+
+---
+Desenvolvido por **Vinicius Stoc**
